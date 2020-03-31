@@ -4,4 +4,4 @@ class Wrestler:
         self.wName = wName
         self.highRank = highRank
         self.dob = dob 
-        self.elo = 0 
+        self.elo = 1000
