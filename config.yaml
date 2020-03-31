@@ -1,0 +1,40 @@
+# ELO rating configuration.
+# -- any variables that can be used to adjust calculations 
+# -- will be placed here. 
+
+# the K value used in the ELO calculation. SEE: https://en.wikipedia.org/wiki/Elo_rating_system#Theory
+# -- datatype: integer.
+K_VALUE:  20 
+
+
+#DATA SOURCE Configuration.  
+# -- any variables needed to specify data sources will be found here.
+
+# BOUTS_PATH should be a string representing the file path to a file containing the sumo bouts to be considered. 
+# -- the file must be a csv. See 
+# -- datatype: string 
+BOUTS_PATH: 'data/sumo-bouts.csv'
+
+
+#OUTPUT Configuration
+# -- variables used to configure command line output 
+
+# PRINT_CURRENT is a boolean value used to print the current ELO rating for active wrestlers to the command line. 
+# -- datatype: boolean 
+PRINT_CURRENT: TRUE 
+
+
+#SAVE Configuration
+# -- variables used to configure data persistence options.
+
+# the format to save the data in. options are 'json' or 'csv'
+# -- datatype: string. 
+SAVE_FORMAT: 'csv'
+
+# if SAVE_RATING is true, the most recent elo will be saved for each wrestler
+# -- datatype: boolean 
+SAVE_RATING: TRUE
+
+# if SAVE_DETAILS is true, details per bout will be saved off. 
+# -- datatype: boolean 
+SAVE_DETAILS: FALSE
