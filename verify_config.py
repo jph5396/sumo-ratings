@@ -1,6 +1,6 @@
 import os
 
-# This file is responsible for verifying the contents of the config file are valid. 
+# This file is responsible for ensuring all the variables in the config file are valid. 
 # An error will be printed to the command line if the file is not valid, and the program will be aborted. 
 
 def verify(config):
@@ -16,6 +16,12 @@ def verify(config):
             errorList.append("Can not locate the file provided in BOUTS_PATH.")
         elif(config['BOUTS_PATH'].endswith(".csv")== False):
             errorList.append("BOUTS_PATH must be in .csv file format.")
+
+        # WRESTLERS_PATH checks are the same as above except for the WRESTLERS_PATH variable. 
+        if(os.path.isfile(config['WRESTLERS_PATH']) == False):
+            errorList.append("Can not locate the file provided in WRESTLERS_PATH.")
+        elif(config['WRESTLERS_PATH'].endswith(".csv")== False):
+            errorList.append("WRESTLERS_PATH must be in .csv file format.")
 
         # checks to see if PRINT_CURRENT is a boolean value. 
         if(type(config['PRINT_CURRENT']) != bool):
