@@ -3,7 +3,7 @@ from wrestler import Wrestler
 
 def loadWrestlers(wrestlerFilePath):
 
-    wrestlerList = []
+    wrestlerDict = {}
     with open (wrestlerFilePath) as file:
         wrestlers = csv.reader(file, delimiter=",")
         
@@ -11,8 +11,8 @@ def loadWrestlers(wrestlerFilePath):
         next(wrestlers)
         for row in wrestlers:
             addWrestler = Wrestler(wrestlerId= row[0], wName=row[1], highRank= row[2], dob= row[3])
-            wrestlerList.append(addWrestler)
+            wrestlerDict[row[0]] = addWrestler
 
-    return wrestlerList    
+    return wrestlerDict    
 
 
