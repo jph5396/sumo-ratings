@@ -1,4 +1,4 @@
-class bout:
+class Bout:
     def __init__(self, tournamentId, day, boutNum, eWrestler, wWrestler, eWin, wWin):
         self.tournament = tournamentId
         self.day = day
