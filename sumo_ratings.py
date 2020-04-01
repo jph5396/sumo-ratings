@@ -1,13 +1,12 @@
 import yaml
-from verify_config import verify
+from Utils.verify_config import verify
 from load_wrestlers import loadWrestlers
 from load_bouts import loadBouts 
-from timer import timer
-from calculateElo import calculate
+from Utils.timer import timer
+from Calculate.calculateElo import calculate
 from print_controller import printContoller
-from wrestler import Wrestler
-from bout import Bout
-from PostBoutListing import PostBoutListing
+
+
 
 
 

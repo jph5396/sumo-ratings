@@ -12,3 +12,9 @@ class Printable(metaclass = abc.ABCMeta):
     def getObjAsLongList(self):
         #get a full version of the object as a list for printing
         raise NotImplementedError 
+    
+    # @abc.abstractmethod
+    # def getHeaders(self):
+    #     # get headers for the printable object.
+    #     # raise NotImplementedError
+    #     pass

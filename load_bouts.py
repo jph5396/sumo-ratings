@@ -1,5 +1,5 @@
 import csv 
-from bout import Bout
+from Model.bout import Bout
 
 def loadBouts(boutFilePath):
 

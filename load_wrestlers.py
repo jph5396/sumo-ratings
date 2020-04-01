@@ -1,5 +1,5 @@
 import csv 
-from wrestler import Wrestler
+from Model.wrestler import Wrestler
 
 def loadWrestlers(wrestlerFilePath, baseElo):
 

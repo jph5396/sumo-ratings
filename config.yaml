@@ -46,7 +46,7 @@ PRINT_CURRENT: TRUE
 # PRINT_STYLE is a string value that is used to 
 # configure how the output should look. 
 # -- datatype: string ('short' or 'long')
-PRINT_STYLE: 'short'
+PRINT_STYLE: 'long'
 
 #----------------------------------------------------------
 #SAVE Configuration
@@ -60,7 +60,7 @@ SAVE_FORMAT: 'csv'
 # if SAVE_RATING is true, the most recent elo 
 # will be saved for each wrestler
 # -- datatype: boolean 
-SAVE_RATING: TRUE
+SAVE_RATING: FALSE
 
 # if SAVE_DETAILS is true, details per bout will be saved off. 
 # -- datatype: boolean 

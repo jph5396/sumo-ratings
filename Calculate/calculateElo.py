@@ -1,7 +1,7 @@
 import math
-from PostBoutListing import PostBoutListing
-from wrestler import Wrestler
-from bout import Bout
+from Model.PostBout import PostBout
+from Model.wrestler import Wrestler
+from Model.bout import Bout
 
 def calcWinProb(wrestlerRating, oppRating):
 
@@ -49,7 +49,7 @@ def calculate(wrestlerDict, boutList, kVal):
             westWrestler.elo = calcNewEloRating(oldWestElo, westWinProb, bout.wWin, kVal)
 
             # creating post bout listings and apprending to the results array 
-            eWrestlerPostBout = PostBoutListing(
+            eWrestlerPostBout = PostBout(
                 tournamentId = bout.tournament, 
                 day = bout.day, 
                 wrestlerId = eastWrestler.wrestlerId, 
@@ -60,7 +60,7 @@ def calculate(wrestlerDict, boutList, kVal):
             
             resultsArr.append(eWrestlerPostBout)
             
-            wWrestlerPostBout = PostBoutListing(
+            wWrestlerPostBout = PostBout(
                 tournamentId= bout.tournament,
                 day = bout.day,
                 wrestlerId = westWrestler.wrestlerId,

@@ -1,5 +1,5 @@
 from tabulate import tabulate
-from PostBoutListing import PostBoutListing
+from Model.PostBout import PostBout
 
 def returnObjAsArrays(listToConvert, printStyle):
 
