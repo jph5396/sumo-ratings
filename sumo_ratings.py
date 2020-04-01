@@ -4,6 +4,7 @@ from load_wrestlers import loadWrestlers
 from load_bouts import loadBouts 
 from timer import timer
 from calculateElo import calculate
+from print_controller import printContoller
 from wrestler import Wrestler
 from bout import Bout
 from PostBoutListing import PostBoutListing
@@ -18,20 +19,16 @@ def main():
         verify(config)
         
         # loads wrestler data and bout data. 
-        wrestlerDict = loadWrestlers(config['WRESTLERS_PATH'])
+        wrestlerDict = loadWrestlers(config['WRESTLERS_PATH'], config['BASE_RATING'])
         boutList = loadBouts(config['BOUTS_PATH'])
         
         # calculate ELO ratings. 
         time = timer(startTimer=True)
         eloRatings = calculate(wrestlerDict, boutList, config['K_VALUE'])
 
-        print(len(eloRatings))
+        print(len(eloRatings), " total ratings were recorded")
 
-        for listItem in range( len(eloRatings) - 70, len(eloRatings)):
-            print(listItem)
-            item = eloRatings[listItem]
-
-            print(item.wName, item.elo, item.change)
+        printContoller(eloRatings[len(eloRatings) - 70 : len(eloRatings) - 1],config['PRINT_STYLE'])
 
         time.stopWatch()
 

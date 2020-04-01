@@ -31,7 +31,9 @@ def calculate(wrestlerDict, boutList, kVal):
         # there are 10 total draws in the dataset, which is around 0.01% of bouts 
         if (bout.eWin == False and bout.wWin == False):
             print("draw")
-        else:
+
+        # if both wrestlers exist in wrestler dictionary run 
+        elif(bout.eWrestler in wrestlerDict and bout.wWrestler in wrestlerDict):
             eastWrestler = wrestlerDict[bout.eWrestler]
             westWrestler = wrestlerDict[bout.wWrestler]
 
@@ -68,8 +70,7 @@ def calculate(wrestlerDict, boutList, kVal):
             )
 
             resultsArr.append(wWrestlerPostBout)
-
-
+        
 
     return resultsArr
 

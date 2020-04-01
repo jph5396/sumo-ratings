@@ -6,9 +6,13 @@ import os
 def verify(config):
     errorList = [] 
     try:
-        # K_VALUE must be a integer 
+        # K_VALUE must be an integer 
         if(type(config['K_VALUE']) != int): 
             errorList.append("K_VALUE must be an integer.")
+        
+        # BASE_RATING must be an integer
+        if(type(config['BASE_RATING']) != int):
+            errorList.append("BASE_RATING must be an integer.")
         
         # checks for the file provided in BOUTS_PATH
         # if the file does exist, confirms that it is a CSV. 
@@ -26,6 +30,14 @@ def verify(config):
         # checks to see if PRINT_CURRENT is a boolean value. 
         if(type(config['PRINT_CURRENT']) != bool):
             errorList.append("PRINT_CURRENT must be a boolean value.")
+        
+        # validating print options. Will be skipped if print_current is false 
+        if(config['PRINT_CURRENT'] == True):
+
+            # checks to see if PRINT_STYLE is an acceptable format 
+            if(config["PRINT_STYLE"] not in ["short", "long"]):
+                errorList.append("PRINT_STYLE is not a valid option. it must be 'short' or 'long' ")
+
 
         #checks to see if the save format is either a .csv or json 
         if(config["SAVE_FORMAT"] not in ["csv", "json"]):
