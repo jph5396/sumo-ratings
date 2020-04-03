@@ -1,8 +1,8 @@
 import yaml
 from tabulate import tabulate
 from Utils.verify_config import verify
-from load_wrestlers import loadWrestlers
-from load_bouts import loadBouts 
+from Utils.load_wrestlers import loadWrestlers
+from Utils.load_bouts import loadBouts 
 from Utils.timer import timer
 from Calculate.elo import elo
 from print_controller import printContoller

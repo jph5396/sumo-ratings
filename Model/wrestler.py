@@ -5,3 +5,4 @@ class Wrestler:
         self.highRank = highRank
         self.dob = dob 
         self.rating = rating
+        self.careerBouts = 0
