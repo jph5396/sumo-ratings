@@ -10,7 +10,7 @@ def loadWrestlers(wrestlerFilePath, baseElo):
         # the next function call here skips the first line of the csv, which should be headers. 
         next(wrestlers)
         for row in wrestlers:
-            addWrestler = Wrestler(wrestlerId= row[0], wName=row[1], highRank= row[2], dob= row[3], elo= baseElo)
+            addWrestler = Wrestler(wrestlerId= row[0], wName=row[1], highRank= row[2], dob= row[3], rating= baseElo)
             wrestlerDict[row[0]] = addWrestler
 
     return wrestlerDict    

@@ -1,13 +1,11 @@
 import yaml
+from tabulate import tabulate
 from Utils.verify_config import verify
 from load_wrestlers import loadWrestlers
 from load_bouts import loadBouts 
 from Utils.timer import timer
-from Calculate.calculateElo import calculate
+from Calculate.elo import elo
 from print_controller import printContoller
-
-
-
 
 
 def main():
@@ -21,13 +19,17 @@ def main():
         wrestlerDict = loadWrestlers(config['WRESTLERS_PATH'], config['BASE_RATING'])
         boutList = loadBouts(config['BOUTS_PATH'])
         
-        # calculate ELO ratings. 
+        # calculate ratings.
+        # TODO: this directly calls an elo rating at the moment, but it really needs to call a 
+        #       factory once other rating systems are implemented. The factory will choose which 
+        #       rating system is returned.  
         time = timer(startTimer=True)
-        eloRatings = calculate(wrestlerDict, boutList, config['K_VALUE'])
+        rating = elo(wrestlerDict=wrestlerDict, tournamentBoutList=boutList, config=config)
+        rating.calculate()
 
-        print(len(eloRatings), " total ratings were recorded")
+        print(tabulate(rating.getPrintableCareerHighs(), tablefmt="fancy_grid"))
 
-        printContoller(eloRatings[len(eloRatings) - 70 : len(eloRatings) - 1],config['PRINT_STYLE'])
+       #printContoller(rating.getPrintableCareerHighs(),config['PRINT_STYLE'])
 
         time.stopWatch()
 

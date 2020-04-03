@@ -1,3 +1,6 @@
+
+# a class representing a single bout between two wrestlers. 
+
 class Bout:
     def __init__(self, tournamentId, day, boutNum, eWrestler, wWrestler, eWin, wWin):
         self.tournament = tournamentId

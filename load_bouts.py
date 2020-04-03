@@ -1,9 +1,10 @@
 import csv 
+from collections import defaultdict
 from Model.bout import Bout
 
 def loadBouts(boutFilePath):
 
-    boutList = [] 
+    boutList = defaultdict(list)
     with open(boutFilePath) as file: 
         bouts = csv.reader(file, delimiter=",")
 
@@ -32,6 +33,6 @@ def loadBouts(boutFilePath):
                 wWin= wWin
             )
 
-            boutList.append(newBout)
+            boutList[newBout.tournament].append(newBout)
 
     return boutList
