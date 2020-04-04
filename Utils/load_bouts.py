@@ -17,10 +17,10 @@ def loadBouts(config):
             # values again.
             eWin = False
             wWin = False
-            if(row[5] == 't'):
+            if(row[6] == 'True'):
                 eWin = True
 
-            if(row[6] == 't'):
+            if(row[10] == 'True'):
                 wWin = True
 
             newBout = Bout(
@@ -28,7 +28,9 @@ def loadBouts(config):
                 day= row[1],
                 boutNum= row[2],
                 eWrestler= row[3],
-                wWrestler= row[4],
+                eRank= row[4],
+                wWrestler = row[7],
+                wRank= row[8],
                 eWin= eWin,
                 wWin= wWin
             )

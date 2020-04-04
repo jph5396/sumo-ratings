@@ -6,3 +6,4 @@ class Wrestler:
         self.dob = dob 
         self.rating = rating
         self.careerBouts = 0
+        self.HighRating = None 

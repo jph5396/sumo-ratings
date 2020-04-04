@@ -16,8 +16,8 @@ def main():
         verify(config)
         
         # loads wrestler data and bout data. 
-        wrestlerDict = loadWrestlers(config)
-        boutList = loadBouts(config)
+        wrestlerDict = loadWrestlers(config=config)
+        boutList = loadBouts(config=config)
         
         # calculate ratings.
         # TODO: this directly calls an elo rating at the moment, but it really needs to call a 
