@@ -62,7 +62,12 @@ SAVE_FORMAT: 'csv'
 # -- datatype: boolean 
 SAVE_CAREER_HIGHS: TRUE
 
-# if SAVE_DAILIES is set to true, the postBout object 
+# if SAVE_DAILY is set to true, the postBout object 
 # will be saved for each bout. 
 # -- datatype: boolean 
-SAVE_DAILIES: FALSE
+SAVE_DAILY: FALSE
+
+# SAVE_DIR is be the path to the folder where the data 
+# should be saved. 
+# -- datatype: string 
+SAVE_DIR: "results"

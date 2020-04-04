@@ -6,6 +6,7 @@ from Utils.load_bouts import loadBouts
 from Utils.timer import timer
 from Calculate.elo import elo
 from print_controller import printContoller
+from save_controller import SaveController
 
 
 def main():
@@ -29,7 +30,8 @@ def main():
 
         print(tabulate(rating.getPrintableCareerHighs(), tablefmt="jira"))
 
-       #printContoller(rating.getPrintableCareerHighs(),config['PRINT_STYLE'])
+        saveCntrl = SaveController(config= config, ratingObj=rating)
+        saveCntrl.save()
 
         time.stopWatch()
 

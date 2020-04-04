@@ -43,13 +43,13 @@ def verify(config):
         if(config["SAVE_FORMAT"] not in ["csv", "json"]):
             errorList.append("SAVE_FORMAT is not a valid option. It must be 'csv' or 'json'. ")
         
-        # checks to see if SAVE_RATING is boolean.
-        if(type(config['SAVE_RATING']) != bool):
-            errorList.append("SAVE_RATING must be a boolean value.")
+        # checks to see if SAVE_CAREER_HIGH is boolean.
+        if(type(config['SAVE_CAREER_HIGHS']) != bool):
+            errorList.append("SAVE_CAREER_HIGH must be a boolean value.")
 
-        # checks to see if SAVE_DETAILS is boolean. 
-        if(type(config["SAVE_DETAILS"]) != bool):
-            errorList.append("SAVE_DETAILS must be a boolean value.")
+        # checks to see if SAVE_DAILY is boolean. 
+        if(type(config["SAVE_DAILY"]) != bool):
+            errorList.append("SAVE_DAILY must be a boolean value.")
     
         # Check if the error list has any errors. if > 0, throw assertion error. 
         if (len(errorList) > 0):
