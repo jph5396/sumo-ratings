@@ -49,7 +49,7 @@ PRINT_CURRENT: TRUE
 PRINT_STYLE: 'long'
 
 #----------------------------------------------------------
-#SAVE Configuration
+# SAVE Configuration
 # -- variables used to configure data persistence options.
 #----------------------------------------------------------
 
@@ -57,11 +57,12 @@ PRINT_STYLE: 'long'
 # -- datatype: string. 
 SAVE_FORMAT: 'csv'
 
-# if SAVE_RATING is true, the most recent elo 
+# if SAVE_RATING is true, the highest career rating  
 # will be saved for each wrestler
 # -- datatype: boolean 
-SAVE_RATING: FALSE
+SAVE_CAREER_HIGHS: TRUE
 
-# if SAVE_DETAILS is true, details per bout will be saved off. 
+# if SAVE_DAILIES is set to true, the postBout object 
+# will be saved for each bout. 
 # -- datatype: boolean 
-SAVE_DETAILS: FALSE
+SAVE_DAILIES: FALSE

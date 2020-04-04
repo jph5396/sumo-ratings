@@ -24,8 +24,9 @@ class abstractRating:
     
     def getPrintableCareerHighs(self):
         returnArr = []
-        for key in self.careerHighRatings:
-            returnArr.append(self.careerHighRatings[key].getObjAsLongList())
+        for key in self.wrestlerDict:
+            if self.wrestlerDict[key].careerBouts > 0:
+                returnArr.append(self.wrestlerDict[key].getObjAsShortList())
         return returnArr
 
     def getPrintableTournament(self, tournament):
@@ -37,17 +38,23 @@ class abstractRating:
 
     def updateCareerHighs(self, newBout):
         
-        # if a wrestler exists see if the new value is their
-        # career high, else set the new bout to his career
-        # high since its the first value 
-        if newBout.wrestlerId in self.careerHighRatings.keys():
-           if newBout.elo > self.careerHighRatings[newBout.wrestlerId].elo:
-               self.careerHighRatings[newBout.wrestlerId] = newBout
-        else:
-            self.careerHighRatings[newBout.wrestlerId] = newBout
+       # if a wrestler's highRating is none, set the newBout to as the high rating. 
+       # else compare the newBout rating and the wrestlers current high rating. 
+       # replace high rating if the newBout rating is higher. 
+        if self.wrestlerDict[newBout.wrestlerId].highRating is None:
+            updatedWrestler = self.wrestlerDict[newBout.wrestlerId]
+            updatedWrestler.highRating = newBout
+            self.wrestlerDict[newBout.wrestlerId] = updatedWrestler
+
+        else: 
+            if  newBout.rating > self.wrestlerDict[newBout.wrestlerId].highRating.rating:
+                updatedWrestler = self.wrestlerDict[newBout.wrestlerId]
+                updatedWrestler.highRating = newBout
+                self.wrestlerDict[newBout.wrestlerId] = updatedWrestler
             
 
     def onNewPostBout(self, newBout):
         self.everyBoutRatings.append(newBout)
         self.updateCareerHighs(newBout)
+        self.wrestlerDict[newBout.wrestlerId].incrementCareerBouts()
 

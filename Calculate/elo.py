@@ -41,8 +41,9 @@ class elo(abstractRating):
                         tournamentId = bout.tournament, 
                         day = bout.day, 
                         wrestlerId = eastWrestler.wrestlerId, 
+                        rank= bout.eRank,
                         wName= eastWrestler.wName,
-                        elo= eastWrestler.rating,
+                        rating= eastWrestler.rating,
                         change= (eastWrestler.rating - oldEastElo)
                     )
                     self.onNewPostBout(eWrestlerPostBout)
@@ -51,8 +52,9 @@ class elo(abstractRating):
                         tournamentId= bout.tournament,
                         day = bout.day,
                         wrestlerId = westWrestler.wrestlerId,
+                        rank = bout.wRank,
                         wName = westWrestler.wName,
-                        elo = westWrestler.rating,
+                        rating = westWrestler.rating,
                         change= (westWrestler.rating - oldWestElo)
                     )
                     self.onNewPostBout(wWrestlerPostBout)
