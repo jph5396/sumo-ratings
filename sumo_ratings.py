@@ -16,8 +16,8 @@ def main():
         verify(config)
         
         # loads wrestler data and bout data. 
-        wrestlerDict = loadWrestlers(config['WRESTLERS_PATH'], config['BASE_RATING'])
-        boutList = loadBouts(config['BOUTS_PATH'])
+        wrestlerDict = loadWrestlers(config)
+        boutList = loadBouts(config)
         
         # calculate ratings.
         # TODO: this directly calls an elo rating at the moment, but it really needs to call a 
@@ -27,7 +27,7 @@ def main():
         rating = elo(wrestlerDict=wrestlerDict, tournamentBoutList=boutList, config=config)
         rating.calculate()
 
-        print(tabulate(rating.getPrintableCareerHighs(), tablefmt="fancy_grid"))
+        print(tabulate(rating.getPrintableCareerHighs(), tablefmt="jira"))
 
        #printContoller(rating.getPrintableCareerHighs(),config['PRINT_STYLE'])
 

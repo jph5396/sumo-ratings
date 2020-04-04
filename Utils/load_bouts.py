@@ -2,10 +2,10 @@ import csv
 from collections import defaultdict
 from Model.bout import Bout
 
-def loadBouts(boutFilePath):
+def loadBouts(config):
 
     boutList = defaultdict(list)
-    with open(boutFilePath) as file: 
+    with open(config["BOUTS_PATH"]) as file: 
         bouts = csv.reader(file, delimiter=",")
 
         # skips first line because it should be headers. 
