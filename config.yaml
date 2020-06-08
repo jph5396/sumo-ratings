@@ -24,13 +24,13 @@ BASE_RATING: 905
 # to a file containing the sumo bouts to be considered. 
 # -- the file must be a csv.  
 # -- datatype: string 
-BOUTS_PATH: 'data/sumo-bouts.csv'
+BOUTS_PATH: 'Data/sumo-bouts.csv'
 
 # WRESTLERS_PATH should be a string representing the file 
 # path to a file with a list of sumo wrestlers. 
 # -- the file must be a csv. 
 # -- datatype: string 
-WRESTLERS_PATH: 'data/sumo-wrestlers.csv'
+WRESTLERS_PATH: 'Data/sumo-wrestlers.csv'
 
 #----------------------------------------------------------
 #OUTPUT Configuration
